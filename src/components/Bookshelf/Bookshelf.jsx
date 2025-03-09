@@ -1,5 +1,4 @@
 import { useState } from 'react';
-// import '../../index.css';
 
 const Bookshelf = () => {
 
@@ -15,17 +14,12 @@ const Bookshelf = () => {
     
     const handleInputChange = (event) => {
         setNewBook({...newBook, [event.target.name]: event.target.value}) 
-        console.log('new book: ' + {newBook});
     }
 
     const handleSubmit = (event) => {
         event.preventDefault();
         setBooks([...books, newBook])
-
-        console.log('books: ' + {books});
-
-        setNewBook (initState);
-        
+        setNewBook (initState);   
     }
       
     return (
@@ -34,7 +28,6 @@ const Bookshelf = () => {
                 
                 <h3>Add a Book</h3>
                
-                {/* Form will go here */}
                 <form onSubmit= {handleSubmit}>
                     <label htmlFor="title">Title: </label>
                     <input 
